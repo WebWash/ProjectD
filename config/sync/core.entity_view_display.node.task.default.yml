@@ -3,22 +3,74 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.task.field_assigned_to
     - field.field.node.task.field_description
+    - field.field.node.task.field_due_date
+    - field.field.node.task.field_parent_task
+    - field.field.node.task.field_project
+    - field.field.node.task.field_task_status
     - node.type.task
   module:
+    - datetime
+    - layout_builder
     - text
     - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
 id: node.task.default
 targetEntityType: node
 bundle: task
 mode: default
 content:
+  field_assigned_to:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
   field_description:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_due_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_parent_task:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_project:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_task_status:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
     region: content
   links:
     settings: {  }

@@ -4,7 +4,12 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.task.field_assigned_to
     - field.field.node.task.field_description
+    - field.field.node.task.field_due_date
+    - field.field.node.task.field_parent_task
+    - field.field.node.task.field_project
+    - field.field.node.task.field_task_status
     - node.type.task
   module:
     - user
@@ -19,4 +24,9 @@ content:
     weight: 100
     region: content
 hidden:
+  field_assigned_to: true
   field_description: true
+  field_due_date: true
+  field_parent_task: true
+  field_project: true
+  field_task_status: true

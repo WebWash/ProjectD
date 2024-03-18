@@ -1,0 +1,106 @@
+uuid: d6055258-30ac-406d-af8e-78512bd1d765
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.project.field_description
+    - field.field.node.project.field_project_status
+    - node.type.project
+    - views.view.tasks
+  module:
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+    - views
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 67-33
+        components:
+          fcf73cd9-4cd5-4d10-9685-6c34fd4c8ad3:
+            uuid: fcf73cd9-4cd5-4d10-9685-6c34fd4c8ad3
+            region: second
+            configuration:
+              id: 'field_block:node:project:field_project_status'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          9e9efccf-f0df-445f-b121-4c1993069e0e:
+            uuid: 9e9efccf-f0df-445f-b121-4c1993069e0e
+            region: first
+            configuration:
+              id: 'field_block:node:project:field_description'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          b99b5408-9fd7-4752-a2ea-cfb0ee26cac0:
+            uuid: b99b5408-9fd7-4752-a2ea-cfb0ee26cac0
+            region: content
+            configuration:
+              id: 'views_block:tasks-tasks_by_project'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: node.project.full
+targetEntityType: node
+bundle: project
+mode: full
+content:
+  field_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_project_status:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

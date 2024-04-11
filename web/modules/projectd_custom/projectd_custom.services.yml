@@ -1,0 +1,7 @@
+services:
+  projectd_custom.breadcrumb:
+    class: Drupal\projectd_custom\TaskBreadcrumbBuilder
+    tags:
+      # In order to override breadcrumbs built with PathBasedBreadcrumbBuilder
+      # set the priority higher than zero.
+      - { name: breadcrumb_builder, priority: 1000 }

@@ -1,0 +1,5 @@
+name: 'ProjectD Custom'
+type: module
+description: 'Used for custom code.'
+package: Custom
+core_version_requirement: ^10 || ^11
